@@ -3,12 +3,12 @@ import Result from "./Result";
 
 //https://charts.ant.design/en/examples/pie/basic#basic
 const Demo = () => {
-    return (
-        <>
-            <NewsInsert/>
-            <Result/>
-        </>
-    );
+  return (
+    <div className='demoContainer '>
+      <NewsInsert />
+      <Result />
+    </div>
+  );
 };
 
 export default Demo;

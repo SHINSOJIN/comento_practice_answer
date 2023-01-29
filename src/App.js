@@ -5,7 +5,7 @@ import "./assets/css.css";
 
 function App() {
   return (
-    <div>
+    <div id='background'>
       <Header />
       <Stock />
       <Footer />
