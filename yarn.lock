@@ -80,6 +80,15 @@
     "@antv/g2plot" "^2.2.11"
     react-content-loader "^5.0.4"
 
+"@ant-design/plots@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@ant-design/plots/-/plots-1.2.4.tgz#984dabbb98eb53e9f3fd9c943504b6dcc6e24574"
+  integrity sha512-bx3gAH3Eat8pgzyY9VQLhn+criCxA4uqidH4cOEUei5YrMzwuhP3+cGuEXj8G49H9o8kq5qymlghFtRSPws3zg==
+  dependencies:
+    "@antv/g2plot" "^2.2.11"
+    "@antv/util" "^2.0.9"
+    react-content-loader "^5.0.4"
+
 "@antv/adjust@^0.2.1":
   version "0.2.5"
   resolved "https://registry.yarnpkg.com/@antv/adjust/-/adjust-0.2.5.tgz#bb37bb4a0a87ca3f4b660848bc9ac07f02bcf5db"
