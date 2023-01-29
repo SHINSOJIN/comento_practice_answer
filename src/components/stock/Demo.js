@@ -5,8 +5,12 @@ import Result from "./Result";
 const Demo = () => {
     return (
         <>
-            <NewsInsert/>
-            <Result/>
+            <div style={{backgroundColor: 'rgb(255, 255, 255)'}}>
+                <div className="demoContainer ">
+                    <NewsInsert/>
+                    <Result/>
+                </div>
+            </div>
         </>
     );
 };

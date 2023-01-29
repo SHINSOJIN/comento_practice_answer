@@ -9,8 +9,7 @@ const Stock = () => {
             <Intro/>
             <Demo />
             <EngineDescription/>
-        </div>
-    );
+        </div>);
 };
 
 export default Stock;
