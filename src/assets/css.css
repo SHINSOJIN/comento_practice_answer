@@ -2,6 +2,144 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
 
 /***************************************   COMMON   ******************************************/
-* {box-sizing: border-box;font-family: 'Pretendard Variable', "Noto Sans KR", serif;}
-body {min-width: 768px; -ms-overflow-style:none;  }  /*크롬 스크롤바 없애기*/
-body::-webkit-scrollbar { display:none; } /*크롬 스크롤바 없애기*/
+* {
+  box-sizing: border-box;
+  font-family: "Pretendard Variable", "Noto Sans KR", serif;
+}
+body {
+  min-width: 768px;
+  -ms-overflow-style: none;
+} /*크롬 스크롤바 없애기*/
+body::-webkit-scrollbar {
+  display: none;
+} /*크롬 스크롤바 없애기*/
+#background {
+  position: relative;
+  background-image: linear-gradient(90deg, #1b5fce 3%, #5812b3 93%);
+  background-repeat: no-repeat;
+  background-position: 2% 0, 98% 61px;
+}
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: -0.75px;
+  color: #222;
+}
+.subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: -0.45px;
+  color: #222;
+}
+.explain {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.78;
+  letter-spacing: -0.45px;
+}
+
+/******************************************   HEADER  **********************************************/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000 !important;
+}
+.header .header2 {
+  background-color: #fff;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.25s linear;
+}
+.header .gnb {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .gnb .logo {
+  display: inline-block;
+  margin: auto 0;
+  height: 100px;
+}
+.header .gnb ul {
+  display: inline-block;
+  text-align: center;
+  margin: auto 0;
+}
+.header .gnb li {
+  margin: 0 31.5px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+.header .gnb li a {
+  color: #fff;
+  opacity: 0.4;
+}
+.header .gnb li[class~="on"] a {
+  opacity: 1;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 37px;
+}
+.header .header2 .gnb li a {
+  color: #222;
+}
+.header .header2 .gnb li[class~="on"] a {
+  opacity: 1;
+  border-bottom: 2px solid #1b5fce;
+  padding-bottom: 38px;
+}
+
+/*******************************************  FOOTER  ****************************************************/
+.footer {
+  height: 193px;
+  position: relative;
+  background: #fff;
+  border-top: solid 1px #ededed;
+}
+.footer .footerInfo {
+  margin-top: 33.8px;
+  display: flex;
+  justify-content: space-between;
+  color: #777;
+  font-size: 13px;
+  font-weight: 500;
+}
+.footer .footerInfo .company {
+  text-align: left;
+}
+.footer .footerInfo .company ul {
+  display: flex;
+}
+.footer .footerInfo .company ul li {
+  margin-right: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: -0.65px;
+  text-align: left;
+  color: #777;
+}
+.footer .footerInfo .company ul li:not(:last-child)::after {
+  content: "|";
+  margin-left: 8px;
+}
+.footer .footerInfo .contact {
+  text-align: right;
+}
+.footer .footerInfo .contact .copyright {
+  bottom: 40px;
+}
