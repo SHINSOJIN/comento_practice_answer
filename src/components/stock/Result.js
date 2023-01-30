@@ -67,15 +67,17 @@ const Result = () => {
 
 
     const config = {
-        appendPadding: 10,
+        appendPadding: 2,
+        padding: -15,
         data,
         angleField: 'score',
         colorField: 'stock',
-        radius: 0.9,
+        radius: 0.8,
+        legend: false,
         label: {
-            type: 'inner',
+            type: 'outer',
             offset: '-30%',
-            content: ({ percent }) => `${(percent * 100).toFixed(0)}%`,
+            content: '{name} {value}%',
             style: {
                 fontSize: 14,
                 textAlign: 'center',
@@ -83,12 +85,13 @@ const Result = () => {
         },
         interactions: [
             {
-                type: 'element-active',
+                // type: 'element-active',
+                type: 'element-single-selected',
             },
         ],
     };
-    return(
 
+    return(
         <div style={{backgroundColor: 'rgb(247, 249, 251)'}}>
             <div className="resultArea inner">
                 <div className="resultSection1"><p className="title">분석결과</p>
@@ -111,7 +114,7 @@ const Result = () => {
                                 </p>
                             </div>
                             <div className="chart">
-                                <Pie {...config} />
+                                <Pie {...config}  style={{width: '300px', height: '300x', padding: 0}} />
                             </div>
                             <div className="detailExplain">
                                 <p className="subtitle result" style={{textAlign: 'left'}}>세부 분석결과</p>
