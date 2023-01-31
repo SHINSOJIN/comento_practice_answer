@@ -1,3 +1,5 @@
+import Button from "@mui/material/Button";
+
 const NewsInsert = () => {
   return (
     <div style={{ backgroundColor: "rgb(255, 255, 255)" }}>
@@ -50,9 +52,9 @@ const NewsInsert = () => {
           </div>
         </div>
         <a href='result.html'>
-          <button className='analysisBtn' tabIndex='0' type='button'>
+          <Button variant='contained' className='analysisBtn'>
             추출하기
-          </button>
+          </Button>
         </a>
       </div>
     </div>
