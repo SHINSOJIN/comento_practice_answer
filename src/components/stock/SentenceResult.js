@@ -4,11 +4,11 @@ const SentenceResult = () => {
   return (
     <>
       <div
-        class='sentenceReport2'
+        className='sentenceReport2'
         style={{ backgroundColor: "rgba(101, 119, 152, 0.15)" }}
       >
-        <p class='sentence'>{sentence[0].sentence}</p>
-        <p class='percent'>
+        <p className='sentence'>{sentence[0].sentence}</p>
+        <p className='percent'>
           <span>{sentence[0].condition[0].stock}&nbsp;&nbsp;&nbsp;</span>
           <span
             style={{
@@ -22,11 +22,11 @@ const SentenceResult = () => {
         </p>
       </div>
       <div
-        class='sentenceReport2'
+        className='sentenceReport2'
         style={{ backgroundColor: "rgba(98, 218, 171, 0.15)" }}
       >
-        <p class='sentence'>{sentence[1].sentence}</p>
-        <p class='percent'>
+        <p className='sentence'>{sentence[1].sentence}</p>
+        <p className='percent'>
           <span>{sentence[1].condition[0].stock}&nbsp;&nbsp;&nbsp;</span>
           <span
             style={{
@@ -40,11 +40,11 @@ const SentenceResult = () => {
         </p>
       </div>
       <div
-        class='sentenceReport2'
+        className='sentenceReport2'
         style={{ backgroundColor: "rgba(99, 149, 249, 0.15)" }}
       >
-        <p class='sentence'>{sentence[2].sentence}</p>
-        <p class='percent'>
+        <p className='sentence'>{sentence[2].sentence}</p>
+        <p className='percent'>
           <span>{sentence[2].condition[0].stock}&nbsp;&nbsp;&nbsp;</span>
           <span
             style={{
@@ -58,20 +58,20 @@ const SentenceResult = () => {
         </p>
       </div>
       <div
-        class='sentenceReport2'
+        className='sentenceReport2'
         style={{ backgroundColor: "rgb(245, 245, 245)" }}
       >
-        <p class='sentence'>{sentence[3].sentence}</p>
-        <p class='percent'>
+        <p className='sentence'>{sentence[3].sentence}</p>
+        <p className='percent'>
           <span>없음</span>
         </p>
       </div>
       <div
-        class='sentenceReport2'
+        className='sentenceReport2'
         style={{ backgroundColor: "rgb(245, 245, 245)" }}
       >
-        <p class='sentence'>{sentence[4].sentence}</p>
-        <p class='percent'>
+        <p className='sentence'>{sentence[4].sentence}</p>
+        <p className='percent'>
           <span>없음</span>
         </p>
       </div>

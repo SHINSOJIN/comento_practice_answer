@@ -4,8 +4,8 @@ import DemoPie from "./Chart";
 const AnalysisResult = () => {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
-      <div class='chartExplain'>
-        <p class='subtitle result'>Result</p>
+      <div className='chartExplain'>
+        <p className='subtitle result'>Result</p>
         <p
           style={{
             marginTop: "24px",
@@ -26,7 +26,7 @@ const AnalysisResult = () => {
           </span>
           한솔케미칼
         </p>
-        <p class='subtitle list'>List</p>
+        <p className='subtitle list'>List</p>
         <p
           style={{
             marginTop: "12px",
@@ -70,11 +70,11 @@ const AnalysisResult = () => {
           SK 24%
         </p>
       </div>
-      <div class='chart'>
+      <div className='chart'>
         <DemoPie />
       </div>
-      <div class='detailExplain'>
-        <p class='subtitle result' style={{ textAlign: "left" }}>
+      <div className='detailExplain'>
+        <p className='subtitle result' style={{ textAlign: "left" }}>
           세부 분석결과
         </p>
         <div>
