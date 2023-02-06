@@ -89,7 +89,7 @@ body::-webkit-scrollbar {
   color: #fff;
   opacity: 0.4;
 }
-.header .gnb li[className~="on"] a {
+.header .gnb li[class~="on"] a {
   opacity: 1;
   border-bottom: 2px solid #fff;
   padding-bottom: 37px;
@@ -192,7 +192,7 @@ body::-webkit-scrollbar {
   font-weight: bold;
   color: #1b5fce;
 }
-.inputArea .keywordBtnWrapper .keywordBtnList .keywordBtn[className~="click"] {
+.inputArea .keywordBtnWrapper .keywordBtnList .keywordBtn[class~="click"] {
   font-weight: bold;
   color: #1b5fce;
 }
