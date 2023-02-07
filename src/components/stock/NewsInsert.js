@@ -1,25 +1,24 @@
 import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
-import DATA from "../../assets/common/sampleNews";
+import NEWSDATA from "../../assets/common/sampleNews";
 
-const NewsInsert = () => {
+const NewsInsert = ({ buttonHandler, currentTab, setCurrentTab }) => {
   const [title, setTitle] = useState({});
   const [content, setContent] = useState({});
-  const [currentTab, setCurrentTab] = useState(0);
 
   useEffect(() => {
     if (currentTab === 1) {
-      setTitle(DATA[0].query);
-      setContent(DATA[0].context);
+      setTitle(NEWSDATA[0].query);
+      setContent(NEWSDATA[0].context);
     } else if (currentTab === 2) {
-      setTitle(DATA[1].query);
-      setContent(DATA[1].context);
+      setTitle(NEWSDATA[1].query);
+      setContent(NEWSDATA[1].context);
     } else if (currentTab === 3) {
-      setTitle(DATA[2].query);
-      setContent(DATA[2].context);
+      setTitle(NEWSDATA[2].query);
+      setContent(NEWSDATA[2].context);
     } else {
-      setTitle(DATA[3].query);
-      setContent(DATA[3].context);
+      setTitle(NEWSDATA[3].query);
+      setContent(NEWSDATA[3].context);
     }
   }, [currentTab]);
 
@@ -95,7 +94,11 @@ const NewsInsert = () => {
           </div>
         </div>
         <a href='result.html'>
-          <Button variant='contained' className='analysisBtn'>
+          <Button
+            variant='contained'
+            className='analysisBtn'
+            onClick={(e) => buttonHandler(e)}
+          >
             추출하기
           </Button>
         </a>

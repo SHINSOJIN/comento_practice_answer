@@ -1,7 +1,7 @@
 import React from "react";
 import DemoPie from "./Chart";
 
-const AnalysisResult = () => {
+const AnalysisResult = ({ analysisResult }) => {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className='chartExplain'>
@@ -21,10 +21,9 @@ const AnalysisResult = () => {
               color: "rgb(99, 149, 249)",
             }}
           >
-            {" "}
-            •{" "}
+            •
           </span>
-          한솔케미칼
+          {analysisResult[0].stock}
         </p>
         <p className='subtitle list'>List</p>
         <p
@@ -43,10 +42,9 @@ const AnalysisResult = () => {
               color: "rgb(99, 149, 249)",
             }}
           >
-            {" "}
-            •{" "}
+            •
           </span>
-          한솔케미칼 74%
+          {analysisResult[0].stock} {analysisResult[0].score.toFixed(2) * 100}%
         </p>
         <p
           style={{
@@ -64,14 +62,13 @@ const AnalysisResult = () => {
               color: "rgb(98, 218, 171)",
             }}
           >
-            {" "}
-            •{" "}
+            •
           </span>
-          SK 24%
+          {analysisResult[1].stock} {analysisResult[1].score.toFixed(2) * 100}%
         </p>
       </div>
       <div className='chart'>
-        <DemoPie />
+        <DemoPie analysisResult={analysisResult} />
       </div>
       <div className='detailExplain'>
         <p className='subtitle result' style={{ textAlign: "left" }}>
@@ -94,14 +91,13 @@ const AnalysisResult = () => {
                 color: "rgb(99, 149, 249)",
               }}
             >
-              {" "}
-              •{" "}
+              •
             </span>
-            한솔케미칼
+            {analysisResult[0].stock}
           </p>
           <p style={{ width: "270px" }}>
-            "Score": 0.7434849143028259 <br />
-            "Logit": 21.697523117065
+            "Score": {analysisResult[0].score} <br />
+            "Logit": {analysisResult[0].logit}
           </p>
         </div>
         <div>
@@ -121,14 +117,13 @@ const AnalysisResult = () => {
                 color: "rgb(98, 218, 171)",
               }}
             >
-              {" "}
-              •{" "}
+              •
             </span>
-            SK
+            {analysisResult[1].stock}
           </p>
           <p style={{ width: "270px" }}>
-            "Score": 0.24532733857631683
-            <br /> "Logit": 20.588768005371
+            "Score": {analysisResult[1].score}
+            <br /> "Logit": {analysisResult[1].logit}
           </p>
         </div>
       </div>
