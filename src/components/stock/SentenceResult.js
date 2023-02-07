@@ -1,80 +1,61 @@
-import sentence from "../../assets/common/sentence";
-
-const SentenceResult = () => {
+const SentenceResult = ({ sentenceResult }) => {
+  const BackGroundColor = [
+    "rgba(101, 119, 152, 0.15)",
+    "rgba(98, 218, 171, 0.15)",
+    "rgba(99, 149, 249, 0.15)",
+  ];
+  const Color = [
+    "rgb(101, 119, 152)",
+    "rgb(98, 218, 171)",
+    "rgb(99, 149, 249)",
+  ];
   return (
     <>
-      <div
-        className='sentenceReport2'
-        style={{ backgroundColor: "rgba(101, 119, 152, 0.15)" }}
-      >
-        <p className='sentence'>{sentence[0].sentence}</p>
-        <p className='percent'>
-          <span>{sentence[0].condition[0].stock}&nbsp;&nbsp;&nbsp;</span>
-          <span
-            style={{
-              color: "rgb(101, 119, 152)",
-              fontWeight: "bold",
-              opacity: "1",
-            }}
-          >
-            {sentence[0].condition[0].score.toFixed(2) * 100}%
-          </span>
-        </p>
-      </div>
-      <div
-        className='sentenceReport2'
-        style={{ backgroundColor: "rgba(98, 218, 171, 0.15)" }}
-      >
-        <p className='sentence'>{sentence[1].sentence}</p>
-        <p className='percent'>
-          <span>{sentence[1].condition[0].stock}&nbsp;&nbsp;&nbsp;</span>
-          <span
-            style={{
-              color: "rgb(98, 218, 171)",
-              fontWeight: "bold",
-              opacity: "1",
-            }}
-          >
-            {sentence[1].condition[0].score.toFixed(2) * 100}%
-          </span>
-        </p>
-      </div>
-      <div
-        className='sentenceReport2'
-        style={{ backgroundColor: "rgba(99, 149, 249, 0.15)" }}
-      >
-        <p className='sentence'>{sentence[2].sentence}</p>
-        <p className='percent'>
-          <span>{sentence[2].condition[0].stock}&nbsp;&nbsp;&nbsp;</span>
-          <span
-            style={{
-              color: "rgb(99, 149, 249)",
-              fontWeight: "bold",
-              opacity: "1",
-            }}
-          >
-            {sentence[2].condition[0].score.toFixed(2) * 100}%
-          </span>
-        </p>
-      </div>
-      <div
-        className='sentenceReport2'
-        style={{ backgroundColor: "rgb(245, 245, 245)" }}
-      >
-        <p className='sentence'>{sentence[3].sentence}</p>
-        <p className='percent'>
-          <span>없음</span>
-        </p>
-      </div>
-      <div
-        className='sentenceReport2'
-        style={{ backgroundColor: "rgb(245, 245, 245)" }}
-      >
-        <p className='sentence'>{sentence[4].sentence}</p>
-        <p className='percent'>
-          <span>없음</span>
-        </p>
-      </div>
+      {sentenceResult.map((sentence) => (
+        <div
+          className='sentenceReport2'
+          style={{
+            backgroundColor:
+              BackGroundColor[
+                Math.floor(Math.random() * BackGroundColor.length)
+              ], //랜덤으로 색 변경함
+          }}
+        >
+          <p className='sentence'>{sentence.sentence}</p>
+          <p className='percent'>
+            {sentence.condition.map((el) => el.stock)[0] ? (
+              <span>
+                {sentence.condition.map((el) => el.stock)[0]}&nbsp;&nbsp;
+                {/* 질문 실무에서도 &nbsp;를 많이 쓰나요? */}
+              </span>
+            ) : (
+              <span>없음&nbsp;&nbsp;</span>
+            )}
+            <span
+              style={{
+                color: Color[Math.floor(Math.random() * Color.length)], //랜덤으로 색 변경함
+                fontWeight: "bold",
+                opacity: "1",
+              }}
+            >
+              {sentence.condition.map((el) =>
+                Math.floor(el.score.toFixed(2) * 100)
+              )[0] ? (
+                <>
+                  {
+                    sentence.condition.map((el) =>
+                      Math.floor(el.score.toFixed(2) * 100)
+                    )[0]
+                  }
+                  %
+                </>
+              ) : (
+                <></>
+              )}
+            </span>
+          </p>
+        </div>
+      ))}
     </>
   );
 };
