@@ -3,6 +3,7 @@ const SentenceResult = ({ sentenceResult }) => {
     "rgba(101, 119, 152, 0.15)",
     "rgba(98, 218, 171, 0.15)",
     "rgba(99, 149, 249, 0.15)",
+    "rgb(245, 245, 245)",
   ];
   const Color = [
     "rgb(101, 119, 152)",

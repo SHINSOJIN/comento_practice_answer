@@ -93,7 +93,7 @@ const NewsInsert = ({ buttonHandler, currentTab, setCurrentTab }) => {
             ></textarea>
           </div>
         </div>
-        <a href='result.html'>
+        <a href='/'>
           <Button
             variant='contained'
             className='analysisBtn'
