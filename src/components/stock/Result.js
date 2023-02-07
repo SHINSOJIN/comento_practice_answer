@@ -3,7 +3,6 @@ import SentenceResult from "./SentenceResult";
 import LoadingSpinner from "../../assets/LoadingSpinner";
 
 const Result = ({ analysisResult, sentenceResult, loading }) => {
-  console.log(loading);
   return (
     <div style={{ backgroundColor: "rgb(247, 249, 251)" }}>
       <div className='resultArea inner'>

@@ -14,6 +14,7 @@ const SentenceResult = ({ sentenceResult }) => {
     <>
       {sentenceResult.map((sentence) => (
         <div
+          key={sentence.index}
           className='sentenceReport2'
           style={{
             backgroundColor:

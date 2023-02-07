@@ -64,6 +64,7 @@ const NewsInsert = ({ buttonHandler, currentTab, setCurrentTab }) => {
             id='inputTitle'
             placeholder='뉴스 제목'
             type='text'
+            readOnly={true}
             value={title} // 질문. 콘솔창 에러를 막기 위해서 defaultValue로 설정하면 에러가 [object Object]뜸
           />
           <div>
@@ -73,7 +74,8 @@ const NewsInsert = ({ buttonHandler, currentTab, setCurrentTab }) => {
               id='inputContext'
               placeholder='뉴스 본문'
               style={{ height: "276px" }}
-              defaultValue={content}
+              value={content}
+              readOnly={true}
             ></textarea>
             <textarea
               aria-hidden='true'
