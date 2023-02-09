@@ -20,7 +20,7 @@ const SentenceResult = ({ sentenceResult }) => {
             backgroundColor:
               BackGroundColor[
                 Math.floor(Math.random() * BackGroundColor.length)
-              ], //랜덤으로 색 변경함
+              ],
           }}
         >
           <p className='sentence'>{sentence.sentence}</p>
@@ -28,14 +28,13 @@ const SentenceResult = ({ sentenceResult }) => {
             {sentence.condition.map((el) => el.stock)[0] ? (
               <span>
                 {sentence.condition.map((el) => el.stock)[0]}&nbsp;&nbsp;
-                {/* 질문 실무에서도 &nbsp;를 많이 쓰나요? */}
               </span>
             ) : (
               <span>없음&nbsp;&nbsp;</span>
             )}
             <span
               style={{
-                color: Color[Math.floor(Math.random() * Color.length)], //랜덤으로 색 변경함
+                color: Color[Math.floor(Math.random() * Color.length)],
                 fontWeight: "bold",
                 opacity: "1",
               }}

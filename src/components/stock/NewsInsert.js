@@ -65,7 +65,7 @@ const NewsInsert = ({ buttonHandler, currentTab, setCurrentTab }) => {
             placeholder='뉴스 제목'
             type='text'
             readOnly={true}
-            value={title} // 질문. 콘솔창 에러를 막기 위해서 defaultValue로 설정하면 에러가 [object Object]뜸
+            value={title}
           />
           <div>
             <textarea
