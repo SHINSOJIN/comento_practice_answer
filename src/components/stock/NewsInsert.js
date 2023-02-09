@@ -3,8 +3,8 @@ import Button from "@mui/material/Button";
 import NEWSDATA from "../../assets/common/sampleNews";
 
 const NewsInsert = ({ buttonHandler, currentTab, setCurrentTab }) => {
-  const [title, setTitle] = useState({});
-  const [content, setContent] = useState({});
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
 
   useEffect(() => {
     if (currentTab === 0) {
@@ -34,25 +34,25 @@ const NewsInsert = ({ buttonHandler, currentTab, setCurrentTab }) => {
             </span>
             <span
               className={currentTab === 0 ? "keywordBtn click" : "keywordBtn"}
-              onClick={() => setCurrentTab(1)}
+              onClick={() => setCurrentTab(0)}
             >
               카카오
             </span>
             <span
               className={currentTab === 1 ? "keywordBtn click" : "keywordBtn"}
-              onClick={() => setCurrentTab(2)}
+              onClick={() => setCurrentTab(1)}
             >
               화장품
             </span>
             <span
               className={currentTab === 2 ? "keywordBtn click" : "keywordBtn"}
-              onClick={() => setCurrentTab(3)}
+              onClick={() => setCurrentTab(2)}
             >
               삼성
             </span>
             <span
               className={currentTab === 3 ? "keywordBtn click" : "keywordBtn"}
-              onClick={() => setCurrentTab(4)}
+              onClick={() => setCurrentTab(3)}
             >
               스마트폰
             </span>
