@@ -6,6 +6,7 @@ import axios from "axios";
 const Demo = () => {
   const [analysisResult, setAnalysisResult] = useState({});
   const [sentenceResult, setSentenceResult] = useState({});
+  const [stockList, setStockList] = useState([]);
   const [currentTab, setCurrentTab] = useState(0);
   const [loading, setLoading] = useState(null);
 
@@ -19,6 +20,11 @@ const Demo = () => {
       .then((response) => {
         setAnalysisResult(response.data.answer);
         setSentenceResult(response.data.sentence);
+        setStockList(
+          response.data.answer
+            .sort((a, b) => b.score - a.score)
+            .map((stock) => stock.stock)
+        );
         setLoading(false);
       })
       .catch((err) => console.log(err.message));
@@ -36,6 +42,7 @@ const Demo = () => {
         <Result
           analysisResult={analysisResult}
           sentenceResult={sentenceResult}
+          stockList={stockList}
           loading={loading}
         />
       </div>

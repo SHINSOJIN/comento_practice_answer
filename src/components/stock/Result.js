@@ -2,7 +2,7 @@ import AnalysisResult from "./AnalysisResult";
 import SentenceResult from "./SentenceResult";
 import LoadingSpinner from "../../assets/LoadingSpinner";
 
-const Result = ({ analysisResult, sentenceResult, loading }) => {
+const Result = ({ analysisResult, sentenceResult, stockList, loading }) => {
   return (
     <div style={{ backgroundColor: "rgb(247, 249, 251)" }}>
       <div className='resultArea inner'>
@@ -35,7 +35,10 @@ const Result = ({ analysisResult, sentenceResult, loading }) => {
             ) : (
               <>
                 {sentenceResult.length ? (
-                  <SentenceResult sentenceResult={sentenceResult} />
+                  <SentenceResult
+                    sentenceResult={sentenceResult}
+                    stockList={stockList}
+                  />
                 ) : (
                   <span className='empty'>
                     뉴스를 입력하고 결과를 확인하세요
