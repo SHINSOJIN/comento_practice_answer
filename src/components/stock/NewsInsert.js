@@ -7,13 +7,13 @@ const NewsInsert = ({ buttonHandler, currentTab, setCurrentTab }) => {
   const [content, setContent] = useState({});
 
   useEffect(() => {
-    if (currentTab === 1) {
+    if (currentTab === 0) {
       setTitle(NEWSDATA[0].query);
       setContent(NEWSDATA[0].context);
-    } else if (currentTab === 2) {
+    } else if (currentTab === 1) {
       setTitle(NEWSDATA[1].query);
       setContent(NEWSDATA[1].context);
-    } else if (currentTab === 3) {
+    } else if (currentTab === 2) {
       setTitle(NEWSDATA[2].query);
       setContent(NEWSDATA[2].context);
     } else {
@@ -33,25 +33,25 @@ const NewsInsert = ({ buttonHandler, currentTab, setCurrentTab }) => {
               <strong>샘플 뉴스</strong>
             </span>
             <span
-              className={currentTab === 1 ? "keywordBtn click" : "keywordBtn"}
+              className={currentTab === 0 ? "keywordBtn click" : "keywordBtn"}
               onClick={() => setCurrentTab(1)}
             >
               카카오
             </span>
             <span
-              className={currentTab === 2 ? "keywordBtn click" : "keywordBtn"}
+              className={currentTab === 1 ? "keywordBtn click" : "keywordBtn"}
               onClick={() => setCurrentTab(2)}
             >
               화장품
             </span>
             <span
-              className={currentTab === 3 ? "keywordBtn click" : "keywordBtn"}
+              className={currentTab === 2 ? "keywordBtn click" : "keywordBtn"}
               onClick={() => setCurrentTab(3)}
             >
               삼성
             </span>
             <span
-              className={currentTab === 4 ? "keywordBtn click" : "keywordBtn"}
+              className={currentTab === 3 ? "keywordBtn click" : "keywordBtn"}
               onClick={() => setCurrentTab(4)}
             >
               스마트폰
