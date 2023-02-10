@@ -16,6 +16,8 @@ const SentenceResult = ({ sentenceResult, stockList }) => {
       "rgba(101, 119, 152, 0.15)",
       "rgba(98, 218, 171, 0.15)",
       "rgba(99, 149, 249, 0.15)",
+      "rgba(327, 120, 345, 0.15)",
+      "rgba(49, 320, 45, 0.15)",
     ];
     if (stockName === undefined) {
       return "rgb(245, 245, 245)";
@@ -53,7 +55,7 @@ const SentenceResult = ({ sentenceResult, stockList }) => {
               }}
             >
               {sentence.condition[0] ? (
-                <>{sentence.condition[0].score.toFixed(2) * 100}%</>
+                <>{Math.floor(sentence.condition[0].score * 100)}%</>
               ) : (
                 <></>
               )}
