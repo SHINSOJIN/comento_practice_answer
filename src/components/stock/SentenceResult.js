@@ -1,10 +1,4 @@
 const SentenceResult = ({ sentenceResult, stockList }) => {
-  // const companyResult = sentenceResult.length
-  //   ? sentenceResult.map((el) => el.condition[0])
-  //   : null;
-
-  // console.log(companyResult);
-
   const Color = [
     "rgb(101, 119, 152)",
     "rgb(98, 218, 171)",
@@ -35,9 +29,6 @@ const SentenceResult = ({ sentenceResult, stockList }) => {
           className='sentenceReport2'
           style={{
             backgroundColor: setBackGroundColorFn(sentence.condition[0]),
-            // BackGroundColor[
-            //   Math.floor(Math.random() * BackGroundColor.length)
-            // ],
           }}
         >
           <p className='sentence'>{sentence.sentence}</p>

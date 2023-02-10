@@ -11,22 +11,6 @@ const NewsInsert = ({ buttonHandler, currentTab, setCurrentTab }) => {
     setContent(NEWSDATA[currentTab].context);
   }, [currentTab]);
 
-  // useEffect(() => {
-  //   if (currentTab === 0) {
-  //     setTitle(NEWSDATA[0].query);
-  //     setContent(NEWSDATA[0].context);
-  //   } else if (currentTab === 1) {
-  //     setTitle(NEWSDATA[1].query);
-  //     setContent(NEWSDATA[1].context);
-  //   } else if (currentTab === 2) {
-  //     setTitle(NEWSDATA[2].query);
-  //     setContent(NEWSDATA[2].context);
-  //   } else {
-  //     setTitle(NEWSDATA[3].query);
-  //     setContent(NEWSDATA[3].context);
-  //   }
-  // }, [currentTab]);
-
   return (
     <div style={{ backgroundColor: "rgb(255, 255, 255)" }}>
       <h3 className='title'>지금 원하는 뉴스의 종목명을 추출해보세요!</h3>
