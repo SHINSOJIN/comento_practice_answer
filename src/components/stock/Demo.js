@@ -21,9 +21,12 @@ const Demo = () => {
         setAnalysisResult(response.data.answer);
         setSentenceResult(response.data.sentence);
         setStockList(
-          response.data.answer
+          response.data.sentence
+            .map((data) => data.condition)
+            .flat()
             .sort((a, b) => b.score - a.score)
             .map((stock) => stock.stock)
+            .reduce((acc, cur) => (acc.includes(cur) ? acc : [...acc, cur]), [])
         );
         setLoading(false);
       })

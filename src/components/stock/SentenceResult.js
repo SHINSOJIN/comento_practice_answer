@@ -1,17 +1,11 @@
 const SentenceResult = ({ sentenceResult, stockList }) => {
-  const Color = [
-    "rgb(101, 119, 152)",
-    "rgb(98, 218, 171)",
-    "rgb(99, 149, 249)",
-  ];
-
-  const setBackGroundColorFn = (stockName) => {
+  const setBackGroundColorFn = (stockName, color) => {
     const BackGroundColor = [
-      "rgba(101, 119, 152, 0.15)",
-      "rgba(98, 218, 171, 0.15)",
-      "rgba(99, 149, 249, 0.15)",
-      "rgba(327, 120, 345, 0.15)",
-      "rgba(49, 320, 45, 0.15)",
+      `rgba(101, 119, 152, ${color})`,
+      `rgba(98, 218, 171, ${color})`,
+      `rgba(99, 149, 249,  ${color})`,
+      `rgba(327, 120, 345, ${color})`,
+      `rgba(49, 320, 45, ${color})`,
     ];
     if (stockName === undefined) {
       return "rgb(245, 245, 245)";
@@ -28,7 +22,7 @@ const SentenceResult = ({ sentenceResult, stockList }) => {
           key={sentence.index}
           className='sentenceReport2'
           style={{
-            backgroundColor: setBackGroundColorFn(sentence.condition[0]),
+            backgroundColor: setBackGroundColorFn(sentence.condition[0], 0.1),
           }}
         >
           <p className='sentence'>{sentence.sentence}</p>
@@ -40,7 +34,7 @@ const SentenceResult = ({ sentenceResult, stockList }) => {
             )}
             <span
               style={{
-                color: Color[Math.floor(Math.random() * Color.length)],
+                color: setBackGroundColorFn(sentence.condition[0], 1),
                 fontWeight: "bold",
                 opacity: "1",
               }}
