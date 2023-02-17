@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import NewsInsert from "./NewsInsert";
-import Result from "./Result";
 import axios from "axios";
+import LoadingSpinner from "../../assets/LoadingSpinner";
+const Result = React.lazy(() => import("./Result")); // suspense 사용해서 로딩해보기
 
 const Demo = () => {
   const [analysisResult, setAnalysisResult] = useState({});
@@ -18,6 +19,7 @@ const Demo = () => {
     axios
       .get(`${url}/stock/news?idx=${currentTab}`)
       .then((response) => {
+        console.log(response.data.answer);
         setAnalysisResult(response.data.answer);
         setSentenceResult(response.data.sentence);
         setStockList(
@@ -42,12 +44,14 @@ const Demo = () => {
           setCurrentTab={setCurrentTab}
           loading={loading}
         />
-        <Result
-          analysisResult={analysisResult}
-          sentenceResult={sentenceResult}
-          stockList={stockList}
-          loading={loading}
-        />
+        <Suspense fallback={<LoadingSpinner />}>
+          <Result
+            analysisResult={analysisResult}
+            sentenceResult={sentenceResult}
+            stockList={stockList}
+            loading={loading}
+          />
+        </Suspense>
       </div>
     </div>
   );
