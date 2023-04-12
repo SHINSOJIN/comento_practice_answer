@@ -10,18 +10,26 @@ const Demo = () => {
     const [result, setResult] = useState({}); // 종목명 API 리턴값 저장
     const [stockList, setStockList] = useState([]) // 추출된 전체 종목명 배열
 
+    const isLogin = sessionStorage.getItem('token');
 
     const analysisClick = (e) => {
-        e.preventDefault()
-        setLoading(true)
+        console.log(isLogin)
+        if(!!isLogin){
+            e.preventDefault()
+            setLoading(true)
 
-        getResult(keywordIdx)
-            .then(res => {
-                const list = res.answer.sort((x, y) => y.score - x.score).map(el => el.stock)
-                setResult(res)
-                setStockList(list)
-            })
-            .catch(err => console.error(err))
+            getResult(keywordIdx)
+                .then(res => {
+                    const list = res.answer.sort((x, y) => y.score - x.score).map(el => el.stock)
+                    setResult(res)
+                    setStockList(list)
+                })
+                .catch(err => console.error(err))
+        }
+        else {
+            window.alert('회원만 사용 가능한 서비스입니다. ')
+        }
+
     };
 
 
