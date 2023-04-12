@@ -1,8 +1,7 @@
-import {useState, useEffect} from 'react';
-import axios from 'axios'
+import {useState} from 'react';
 import NewsInsert from "./NewsInsert";
 import Result from "./Result";
-import sampleNews  from "../../assets/datas/sampleNews";
+import {getResult} from '../../apis/stock_api'
 
 //https://charts.ant.design/en/examples/pie/basic#basic
 const Demo = () => {
@@ -16,15 +15,13 @@ const Demo = () => {
         e.preventDefault()
         setLoading(true)
 
-        const url = 'https://d9390710-b9c8-490b-8005-e11d0772b58c.mock.pstmn.io'
-        axios.get(`${url}/stock/news?idx=${keywordIdx}`)
+        getResult(keywordIdx)
             .then(res => {
-                const list = res.data.answer.sort((x, y) => y.score - x.score).map(el => el.stock)
-                setResult(res.data)
+                const list = res.answer.sort((x, y) => y.score - x.score).map(el => el.stock)
+                setResult(res)
                 setStockList(list)
             })
             .catch(err => console.error(err))
-
     };
 
 

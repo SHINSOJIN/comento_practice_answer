@@ -49,6 +49,7 @@ const Result = ({result, stockList, loading}) => {
         return palette[idx]
     }
 
+
     return(
         <div style={{backgroundColor: 'rgb(247, 249, 251)'}}>
             <div className="resultArea inner">
