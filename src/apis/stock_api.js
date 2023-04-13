@@ -11,10 +11,5 @@ export async function getResult(keywordIdx){
 }
 
 export async function getKeywordResult(keyword){
-    try {
-        const res = await axios.get(`${HOST}/stock/keyword=${keyword}`)
-        return res.data;
-    } catch (err) {
-        return null;
-    }
+//  TODO: 키워드 조회 API
 }

@@ -15,10 +15,9 @@ const Search = () => {
 
     const searchKeyword = () => {
         getKeywordResult(keyword).then(res => {
-            if(res.resultcode === '200'){
-                setNewsList(res.data);
-                setResultAlert(`'${keyword}'  이슈와 관련된 최신 뉴스 리스트입니다.\n자유롭게 선택하시고 입력 버튼을 눌러주세요.`);
-            }})
+                //    TODO: 키워드 API 요청 후 코드 작성
+            }
+        )
             .catch(err => console.error(err));
     };
 
@@ -31,11 +30,8 @@ const Search = () => {
     };
 
     const selectNewsBtnClick = () => {
-        const refinedContext = selectNewsContext.split('.').join('\n\n'); // 본문 줄바꿈 추가
-        window.opener.setChildValue(selectNewsTitle, refinedContext)
-        setResultAlert('');
-        setNewsList([]);
-        window.close();
+        const refinedContext = selectNewsContext.split('.').join('\n\n'); // 본문 줄바꿈 추가하는 코드
+        // TODO 뉴스 목록 클릭 후 부모창에 제목, 본문 전달
     };
 
     return (

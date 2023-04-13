@@ -11,9 +11,13 @@ const NewsInsert = ({keywordIdx, setKeywordIdx, analysisClick}) => {
         setContext(sampleNews[keywordIdx].context)
     }, [keywordIdx])
 
-    // 뉴스 검색 - 자식컴포넌트에게 상태값 변경용 함수 전달
-    const changeTitle = (str) => setTitle(str)
-    const changeContext = (str) => setContext(str)
+
+    const changeTitle = () => {
+        //TODO: 뉴스 검색 - 자식컴포넌트에게 뉴스제목 변경 함수 전달
+    }
+    const changeContext = () => {
+        //TODO: 뉴스 검색 - 자식컴포넌트에게 뉴스본문 변경 함수 전달
+    }
 
     return (
         <>
@@ -33,8 +37,7 @@ const NewsInsert = ({keywordIdx, setKeywordIdx, analysisClick}) => {
                 <div className="inputWrapper">
                     <div>
                         <div>
-                            <input aria-invalid="false" id="inputTitle" placeholder="뉴스 제목" type="text"
-                                   defaultValue={title}/>
+                            <input aria-invalid="false" id="inputTitle" placeholder="뉴스 제목" type="text" defaultValue={title}/>
                         </div>
                     </div>
                     <div>
