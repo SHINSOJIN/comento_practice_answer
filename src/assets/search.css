@@ -1,0 +1,19 @@
+#searchRoot { max-width: 510px; max-height: 859px }
+.searchContainer {background-color: #fff; padding: 50px 30px;}
+.searchContainer .title {text-align: center; }
+.searchContainer .explain { text-align: left; letter-spacing: -0.4px; font-size: 16px; margin:50px 0 40px 0;}
+.searchContainer .searchArea{border-bottom: 1px solid #ededed; padding-bottom: 30px }
+.searchContainer .searchArea #keywordInput { background-color: #f7f8fb;}
+.searchContainer .searchArea #keywordSearchBtn {height: 60px; width: 100px;background-color: #1b5fce; border-radius: 0; color: #fff;  font-size: 18px;font-weight: bold; line-height: 2.56;letter-spacing: -0.45px; }
+.searchContainer .searchResultArea { margin: 30px 0; height:342px; overflow-y: scroll; -ms-overflow-style: none;}
+.searchContainer .searchResultArea::-webkit-scrollbar { display:none; }
+.searchContainer .searchResultArea .subtitle {text-align: left; white-space: pre-wrap;}
+.searchContainer .searchResultArea .emptyNewsItem{ font-size: 14px;line-height: 1.57;letter-spacing: -0.35px;color: #999; text-align: center; margin-top: 150px; }
+.searchContainer .searchResultArea .newsItem{ cursor: pointer; border-bottom: 1px solid #ededed; padding: 16px 5px; text-align: left;}
+.searchContainer .searchResultArea .newsItem:hover{ background-color: rgba(61,118,210, 0.05) }
+.searchContainer .searchResultArea .newsItem[class~='click'] { background-color: rgba(61,118,210, 0.05) }
+.searchContainer .searchResultArea .newsItem .date { font-size: 11px;line-height: 2.18;letter-spacing: -0.28px;color: #777;}
+.searchContainer .searchResultArea .newsItem .headline { font-size: 14px;line-height: 1.57;letter-spacing: -0.35px;color: #555;}
+.searchContainer .searchResultArea .newsItem .url { font-size: 14px;line-height: 1.71;letter-spacing: -0.28px;color: #1b5fce;}
+.searchContainer #selectNewsBtn {height: 60px; width: 100%; background-color: #1b5fce; border-radius: 0; color: #fff;  font-size: 18px;font-weight: bold; line-height: 2.56;letter-spacing: -0.45px;}
+.searchContainer #selectNewsBtn[class~='true'] {background-color: #ededed;  color: #999;}

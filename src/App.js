@@ -4,6 +4,7 @@ import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import Stock from './pages/Stock';
 import Login from "./pages/Login";
+import Search from "./pages/Search";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<Stock/>} />
                 <Route path='/login' element={<Login/>} />
+                <Route path='/search' element={<Search/>} />
             </Routes>
             <Footer/>
         </div>

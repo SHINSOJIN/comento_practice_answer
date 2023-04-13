@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import sampleNews  from "../../assets/datas/sampleNews";
+import KeywordSearch from "./KeywordSearch";
 
 const NewsInsert = ({keywordIdx, setKeywordIdx, analysisClick}) => {
     const [title, setTitle] = useState('')
@@ -10,13 +11,18 @@ const NewsInsert = ({keywordIdx, setKeywordIdx, analysisClick}) => {
         setContext(sampleNews[keywordIdx].context)
     }, [keywordIdx])
 
+    // 뉴스 검색 - 자식컴포넌트에게 상태값 변경용 함수 전달
+    const changeTitle = (str) => setTitle(str)
+    const changeContext = (str) => setContext(str)
+
     return (
         <>
             <h3 className="title">지금 원하는 뉴스의 종목명을 추출해보세요!</h3>
+            <KeywordSearch changeTitle={changeTitle} changeContext={changeContext} context={context} title={title} />
             <div className="inputArea inner">
                 <div className="keywordBtnWrapper">
                     <div className="keywordBtnList">
-                        <div></div>
+                        <div/>
                         <span><strong>샘플 뉴스</strong></span>
                         <span className={`keywordBtn ${keywordIdx === 0 ? 'click' : ''}`} onClick={()=>setKeywordIdx(0)}>카카오</span>
                         <span className={`keywordBtn ${keywordIdx === 1 ? 'click' : ''}`} onClick={()=>setKeywordIdx(1)}>화장품</span>
