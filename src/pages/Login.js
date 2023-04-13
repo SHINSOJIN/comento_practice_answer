@@ -11,15 +11,7 @@ const Login = () => {
     const [failMsg, setFailMsg] = useState('');
 
     const loginClick = () => {
-        loginAPI(userid, password).then(res => {
-            if (res) {
-                console.log(res)
-                sessionStorage.setItem('token', res.token.accessToken)
-                window.location.replace('/')
-            } else {
-                setFailMsg('아이디나 비밀번호를 다시 입력하세요')
-            }
-        })
+    //    TODO : 로그인 코드
     }
 
 
